@@ -1,0 +1,38 @@
+while True:
+    num_1= input('digite um número: ')
+    num_2 = input('digite outro número: ')
+    operador = input('digite um operador (+-/*): ')
+
+     
+    novo_numero = None 
+    float_num_1 = 0
+    float_num_2 = 0
+    try:
+        float_num_1 = float(num_1)
+        float_num_2 = float(num_2)
+        novo_numero = True
+    except:
+        novo_numero = None
+
+    if novo_numero is None :
+        print('voce digitou algum numero incorreto')
+        continue
+    operadores_permitidos = '+-/*'
+    if operador not in operadores_permitidos:
+        print('Operador invalidos')
+        continue
+    if len(operador) > 1:
+        print('digite apenas um operaddr')
+        continue
+    print('O resultado do valor está Descrito abaixo: ')    
+    if operador == '+':
+        print(float_num_1 + float_num_2) 
+    elif operador == '-':
+        print(float_num_1 - float_num_2)
+    elif operador == '*':
+        print(float_num_1 * float_num_2)
+    elif operador == '/':
+        print(float_num_1 / float_num_2)               
+
+    sair =input('Deseja sair? ').lower().startswith('s')
+    break        
